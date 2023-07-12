@@ -2,7 +2,6 @@ import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
-// import React from 'react';
 import { useState } from 'react';
 
 export const App = () => {
@@ -11,9 +10,6 @@ export const App = () => {
   const [bad, setBad] = useState(0);
 
   const onLeaveFeedback = option => {
-    // this.setState(prevState => ({
-    //   [option]: prevState[option] + 1,
-    // }));
     switch (option) {
       case 'good':
         setGood(good + 1);
@@ -29,26 +25,8 @@ export const App = () => {
     }
   };
 
-  //   if (good) {
-  //     setGood(good + 1);
-  //   } else if (neutral) {
-  //     setNeutral(neutral + 1);
-  //   } else if (bad) {
-  //     setBad(bad + 1);
-  //   }
-  // };
-
-  // const countTotalFeedback = () => {
-  //   const { good, neutral, bad } = this.state;
-  //   const result = good + neutral + bad;
-  //   return result;
-  // };
   const result = good + neutral + bad;
 
-  // const countPositiveFeedbackPercentage = () => {
-  //   const { good, neutral, bad } = this.state;
-  //   return percentage.toFixed(0);
-  // };
   const percentage = ((good / (good + neutral + bad)) * 100).toFixed(0) || 0;
 
   return (
